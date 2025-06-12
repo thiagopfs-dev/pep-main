@@ -63,5 +63,9 @@ app.post('/registrar', (req, res) => {
 // Inicia o servidor e o faz "escutar" por requisições na porta definida.
 app.listen(PORT, () => {
     console.log(`✅ Servidor rodando com sucesso!`);
+<<<<<<< HEAD
     console.log(`👉 Acesse em seu navegador: http://localhost:${PORT}/cadastro`); // Adicionado /cadastro para ir direto à página principal
+=======
+    console.log(`👉 Acesse em seu navegador: http://localhost:${PORT}`); // Adicionado /cadastro para ir direto à página principal
+>>>>>>> 792e38f8407e47119de43f0e9c80f7b434ab549e
 });
