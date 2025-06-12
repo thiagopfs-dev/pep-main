@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Fornecedor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        html, body {
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+
+    <div class="bg-white w-full max-w-lg p-8 rounded-xl shadow-lg">
+        
+        <!-- Cabeçalho com ícone -->
+        <div class="flex items-center gap-3 mb-8">
+            <i class="ph-truck text-3xl text-yellow-600"></i>
+            <h1 class="text-3xl font-bold text-gray-800">Cadastro de Fornecedor</h1>
+        </div>
+
+        <form action="/registrar-fornecedor" method="POST" class="space-y-6">
+
+            <!-- Nome da empresa -->
+            <div>
+                <label for="razao_social" class="block mb-2 text-sm font-medium text-gray-700">Razão Social</label>
+                <input type="text" id="razao_social" name="razao_social" placeholder="Nome da empresa" required
+                       class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-yellow-500 focus:border-yellow-500 transition">
+            </div>
+
+            <!-- Nome fantasia -->
+            <div>
+                <label for="nome_fantasia" class="block mb-2 text-sm font-medium text-gray-700">Nome Fantasia</label>
+                <input type="text" id="nome_fantasia" name="nome_fantasia" placeholder="Nome comercial"
+                       class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-yellow-500 focus:border-yellow-500 transition">
+            </div>
+
+            <!-- CNPJ -->
+            <div>
+                <label for="cnpj" class="block mb-2 text-sm font-medium text-gray-700">CNPJ</label>
+                <input type="text" id="cnpj" name="cnpj" placeholder="00.000.000/0001-00" required
+                       class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-yellow-500 focus:border-yellow-500 transition">
+            </div>
+
+            <!-- Telefone -->
+            <div>
+                <label for="telefone" class="block mb-2 text-sm font-medium text-gray-700">Telefone</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="(00) 0000-0000" required
+                       class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-yellow-500 focus:border-yellow-500 transition">
+            </div>
+
+            <!-- Email -->
+            <div>
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-700">Email</label>
+                <input type="email" id="email" name="email" placeholder="contato@fornecedor.com" required
+                       class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-yellow-500 focus:border-yellow-500 transition">
+            </div>
+
+            <!-- Categoria de fornecimento -->
+            <div>
+                <label for="categoria" class="block mb-2 text-sm font-medium text-gray-700">Categoria</label>
+                <select id="categoria" name="categoria" required
+                        class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-yellow-500 focus:border-yellow-500 transition">
+                    <option value="" hidden>Selecione a categoria</option>
+                    <option value="medicamentos">Medicamentos</option>
+                    <option value="materiais">Materiais Hospitalares</option>
+                    <option value="alimentacao">Alimentação</option>
+                    <option value="servicos">Serviços Terceirizados</option>
+                    <option value="outros">Outros</option>
+                </select>
+            </div>
+
+            <!-- Botão de cadastrar -->
+            <button type="submit"
+                    class="w-full bg-yellow-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-yellow-700 focus:outline-none focus:ring-4 focus:ring-yellow-300 transition-all duration-300">
+                Cadastrar
+            </button>
+        </form>
+
+        <!-- Link de Voltar -->
+        <div class="text-center mt-6">
+            <a href="/cadastro" class="text-sm text-yellow-600 hover:underline">
+                &larr; Voltar para a Central de Cadastros
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
