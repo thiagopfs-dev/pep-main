@@ -106,6 +106,8 @@ header h1 {
 .fa-boxes-stacked { color: #a68a64; } /* Marrom para Estoque */
 .fa-hand-holding-dollar { color: #06d6a0; } /* Verde-azulado para Financeiro */
 .fa-gears { color: #6c757d; } /* Cinza-escuro para Configurações */
+.fa-stethoscope { color: #000000; }
+.fa-vial{ color: #9370DB;}
 
 /* --- CORREÇÃO: BORDA DO CARD MUDA DE COR CONFORME O ÍCONE INTERNO --- */
 /* Esta nova regra verifica qual ícone o card "tem" (:has) e aplica a cor certa */
@@ -121,7 +123,10 @@ header h1 {
 .module-card:has(.fa-boxes-stacked):hover { border-left-color: #a68a64; }
 .module-card:has(.fa-hand-holding-dollar):hover { border-left-color: #06d6a0; }
 .module-card:has(.fa-gears):hover { border-left-color: #6c757d; }
-
+.module-card:has(.fa-stethoscope):hover { border-left-color: #000000; }
+.module-card:has(.fa-vial):hover { border-left-color: #9370DB; } 
+.module-card:has(.fa-hospital):hover { border-left-color: #053df5; }
+.module-card:has(.fa-images):hover { border-left-color: #053df5; }
 
 /* --- Responsividade (sem alterações) --- */
 @media (max-width: 768px) {
