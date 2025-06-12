@@ -32,28 +32,27 @@ class App {
     }
 
     bindEvents() {
-        // Sidebar navigation
+        // Sidebar navigation and other global events
         document.addEventListener('click', (e) => {
-            if (e.target.closest('.sidebar-menu a')) {
-                e.preventDefault();
-                const module = e.target.dataset.module;
+            const sidebarLink = e.target.closest('.sidebar-menu a');
+
+            // --- CORREÇÃO APLICADA AQUI ---
+            // Verifica se o clique foi em um link do menu da sidebar
+            if (sidebarLink) {
+                const module = sidebarLink.dataset.module;
+
+                // Apenas executa a lógica de SPA se o link tiver o atributo data-module
                 if (module) {
+                    e.preventDefault(); // Previne o comportamento padrão APENAS para links de módulo
                     this.loadModule(module);
                 }
+                // Se o link não tiver data-module (como o "Home"), o navegador seguirá o href normalmente.
+            
             } else if (e.target.id === 'sidebarToggle') {
                 this.toggleSidebar();
             }
-        });
 
-        // Handle responsive sidebar
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 768) {
-                document.getElementById('sidebar').classList.remove('show');
-            }
-        });
-
-        // Close sidebar when clicking outside on mobile
-        document.addEventListener('click', (e) => {
+            // Close sidebar when clicking outside on mobile
             const sidebar = document.getElementById('sidebar');
             const sidebarToggle = document.getElementById('sidebarToggle');
             
@@ -62,6 +61,13 @@ class App {
                 !sidebar.contains(e.target) && 
                 !sidebarToggle.contains(e.target)) {
                 sidebar.classList.remove('show');
+            }
+        });
+
+        // Handle responsive sidebar
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                document.getElementById('sidebar').classList.remove('show');
             }
         });
     }
