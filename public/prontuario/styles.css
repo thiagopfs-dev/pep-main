@@ -1,0 +1,93 @@
+/* Custom styles for the PEP System */
+.sidebar-collapsed {
+    width: 4rem;
+}
+
+.sidebar-collapsed #sidebar-header {
+    display: none;
+}
+
+.sidebar-collapsed #user-info {
+    justify-content: center;
+}
+
+.sidebar-collapsed #user-info > div:last-child {
+    display: none;
+}
+
+.menu-item-text {
+    transition: opacity 0.3s ease;
+}
+
+.sidebar-collapsed .menu-item-text {
+    opacity: 0;
+    display: none;
+}
+
+/* Smooth transitions */
+.transition-all {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Loading animation */
+.loading {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: .5;
+    }
+}
+
+/* Status indicators */
+.status-active {
+    background-color: #fee2e2;
+    color: #dc2626;
+}
+
+.status-ongoing {
+    background-color: #fef3c7;
+    color: #d97706;
+}
+
+.status-resolved {
+    background-color: #dcfce7;
+    color: #16a34a;
+}
+
+.status-normal {
+    background-color: #dcfce7;
+    color: #16a34a;
+}
+
+.status-abnormal {
+    background-color: #fef3c7;
+    color: #d97706;
+}
+
+.status-critical {
+    background-color: #fee2e2;
+    color: #dc2626;
+}
