@@ -30,35 +30,56 @@ app.get('/cadastro/usuario', (req, res) => {
 
 // Rotas para as outras seções (temporariamente levam para uma página genérica)
 app.get('/cadastro/paciente', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'placeholder.html'));
+    res.sendFile(path.join(__dirname, 'public', 'cadastro-paciente.html'));
 });
 app.get('/cadastro/plano', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'placeholder.html'));
+    res.sendFile(path.join(__dirname, 'public', 'cadastro-plano.html'));
 });
 app.get('/cadastro/fornecedor', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'placeholder.html'));
+    res.sendFile(path.join(__dirname, 'public', 'cadastro-fornecedor.html'));
 });
 
 
-// Rota que RECEBE os dados (via método POST) do formulário de cadastro de USUÁRIO
-app.post('/registrar', (req, res) => {
-    // Pega os dados enviados no corpo da requisição.
-    const dadosDoFormulario = req.body;
-    
-    // Imprime os dados recebidos no console do servidor para depuração.
-    console.log('--- DADOS DE CADASTRO DE USUÁRIO RECEBIDOS ---');
-    console.log(dadosDoFormulario);
-    console.log('-------------------------------------------');
+// ROTAS DE PROCESSAMENTO (POST)
 
-    // Envia uma resposta de sucesso para o navegador do usuário.
-    res.send(`
+// Cadastro de Usuário
+app.post('/registrar', (req, res) => {
+    console.log('--- CADASTRO DE USUÁRIO ---');
+    console.log(req.body);
+    res.send(successMessage('Usuário'));
+});
+
+// Cadastro de Paciente
+app.post('/registrar-paciente', (req, res) => {
+    console.log('--- CADASTRO DE PACIENTE ---');
+    console.log(req.body);
+    res.send(successMessage('Paciente'));
+});
+
+// Cadastro de Plano de Saúde
+app.post('/registrar-plano', (req, res) => {
+    console.log('--- CADASTRO DE PLANO DE SAÚDE ---');
+    console.log(req.body);
+    res.send(successMessage('Plano de Saúde'));
+});
+
+// Cadastro de Fornecedor
+app.post('/registrar-fornecedor', (req, res) => {
+    console.log('--- CADASTRO DE FORNECEDOR ---');
+    console.log(req.body);
+    res.send(successMessage('Fornecedor'));
+});
+
+// Função auxiliar de mensagem HTML
+function successMessage(tipo) {
+    return `
         <div style="font-family: sans-serif; text-align: center; padding: 50px;">
-            <h1>Cadastro de Usuário recebido com sucesso!</h1>
-            <p>Os dados foram impressos no terminal do seu servidor Node.js.</p>
+            <h1>Cadastro de ${tipo} recebido com sucesso!</h1>
+            <p>Os dados foram impressos no terminal do servidor.</p>
             <a href="/cadastro" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #0077b6; color: white; text-decoration: none; border-radius: 5px;">Voltar para a Central de Cadastros</a>
         </div>
-    `);
-});
+    `;
+}
 
 // Inicia o servidor e o faz "escutar" por requisições na porta definida.
 app.listen(PORT, () => {
