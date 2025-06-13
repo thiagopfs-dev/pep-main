@@ -211,6 +211,6 @@ body, html {
   .form-options {
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px; /* Espaço entre os itens quando em coluna */
+    gap: 10px; /* Espaço entre os itens quando em coluna*/
   }
 }
