@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Plano de Saúde</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        html, body {
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+
+    <div class="bg-white w-full max-w-lg p-8 rounded-xl shadow-lg">
+        
+        <!-- Cabeçalho com ícone -->
+        <div class="flex items-center gap-3 mb-8">
+            <i class="ph-identification-card text-3xl text-green-600"></i>
+            <h1 class="text-3xl font-bold text-gray-800">Cadastro de Plano de Saúde</h1>
+        </div>
+
+        <form action="/registrar-plano" method="POST" class="space-y-6">
+
+            <!-- Nome do plano -->
+            <div>
+                <label for="nome_plano" class="block mb-2 text-sm font-medium text-gray-700">Nome do Plano</label>
+                <input type="text" id="nome_plano" name="nome_plano" placeholder="Ex: Unimed Nacional" required
+                       class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500 transition">
+            </div>
+
+            <!-- Operadora -->
+            <div>
+                <label for="operadora" class="block mb-2 text-sm font-medium text-gray-700">Operadora</label>
+                <input type="text" id="operadora" name="operadora" placeholder="Ex: Unimed, Bradesco Saúde, Amil" required
+                       class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500 transition">
+            </div>
+
+            <!-- Código ANS -->
+            <div>
+                <label for="codigo_ans" class="block mb-2 text-sm font-medium text-gray-700">Código ANS</label>
+                <input type="text" id="codigo_ans" name="codigo_ans" placeholder="Número do registro na ANS" required
+                       class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500 transition">
+            </div>
+
+            <!-- Tipo de Cobertura -->
+            <div>
+                <label for="tipo_cobertura" class="block mb-2 text-sm font-medium text-gray-700">Tipo de Cobertura</label>
+                <select id="tipo_cobertura" name="tipo_cobertura" required
+                        class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500 transition">
+                    <option value="" hidden>Selecione o tipo</option>
+                    <option value="ambulatorial">Ambulatorial</option>
+                    <option value="hospitalar">Hospitalar</option>
+                    <option value="amb_hosp">Ambulatorial + Hospitalar</option>
+                    <option value="odontologico">Odontológico</option>
+                </select>
+            </div>
+
+            <!-- Abrangência -->
+            <div>
+                <label for="abrangencia" class="block mb-2 text-sm font-medium text-gray-700">Abrangência</label>
+                <select id="abrangencia" name="abrangencia" required
+                        class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500 transition">
+                    <option value="" hidden>Selecione a abrangência</option>
+                    <option value="municipal">Municipal</option>
+                    <option value="estadual">Estadual</option>
+                    <option value="nacional">Nacional</option>
+                </select>
+            </div>
+
+            <!-- Botão de cadastrar -->
+            <button type="submit"
+                    class="w-full bg-green-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-green-700 focus:outline-none focus:ring-4 focus:ring-green-300 transition-all duration-300">
+                Cadastrar
+            </button>
+        </form>
+
+        <!-- Link de Voltar -->
+        <div class="text-center mt-6">
+            <a href="/cadastro" class="text-sm text-green-600 hover:underline">
+                &larr; Voltar para a Central de Cadastros
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
