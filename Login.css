@@ -1,0 +1,216 @@
+/* Importando uma fonte moderna do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Reset básico e configurações globais */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #f7f9fc; /* Um fundo off-white/cinza muito claro */
+  color: #333;
+  line-height: 1.6;
+}
+
+.login-page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px; /* Espaçamento para telas menores */
+  /* Você pode adicionar um gradiente sutil ou uma imagem de fundo aqui se desejar */
+  /* background-image: linear-gradient(to top right, #e0e7ff, #f7f9fc); */
+}
+
+.login-container-card {
+  background-color: #ffffff;
+  padding: 35px 45px;
+  border-radius: 16px; /* Bordas mais suaves e modernas */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08); /* Sombra mais difusa e elegante */
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+}
+
+.login-header {
+  margin-bottom: 30px;
+}
+
+.erp-logo {
+  font-size: 3.2em; /* Tamanho maior para o logo */
+  font-weight: 700; /* Bem destacado */
+  color: #2c5282; /* Azul corporativo mais escuro */
+  margin-bottom: 0px;
+  line-height: 1;
+}
+
+.erp-logo-plus {
+  color: #3182ce; /* Azul um pouco mais claro para o "+" */
+  font-weight: 700;
+}
+
+.erp-subtitle {
+  font-size: 1.05em;
+  color: #718096; /* Cinza para o subtítulo */
+  margin-top: 2px;
+  font-weight: 400;
+}
+
+.welcome-message {
+  font-size: 1.1em;
+  color: #4a5568;
+  margin-top: 15px;
+}
+
+.login-form h2 {
+  font-size: 1.6em;
+  font-weight: 600;
+  color: #2d3748; /* Cor escura para o título do formulário */
+  margin-bottom: 25px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9em;
+  font-weight: 600; /* Labels mais destacados */
+  color: #4a5568; /* Cor de label mais suave */
+  margin-bottom: 8px;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 15px;
+  color: #a0aec0; /* Cor do ícone */
+  font-size: 1.1em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+  width: 100%;
+  padding: 12px 15px 12px 45px; /* Padding aumentado à esquerda para o ícone */
+  border: 1px solid #e2e8f0; /* Borda muito sutil */
+  border-radius: 8px; /* Bordas arredondadas para inputs */
+  font-size: 1em;
+  color: #2d3748;
+  background-color: #f7fafc; /* Fundo levemente diferente para o input */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.form-group input[type="text"]::placeholder,
+.form-group input[type="password"]::placeholder {
+  color: #a0aec0; /* Cor do placeholder */
+  font-weight: 400;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="password"]:focus {
+  outline: none;
+  border-color: #3182ce; /* Azul no foco */
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2); /* Sombra de foco suave */
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  font-size: 0.85em;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  color: #4a5568;
+  cursor: pointer;
+}
+
+.remember-me input[type="checkbox"] {
+  margin-right: 8px;
+  accent-color: #3182ce; /* Cor do checkbox quando marcado */
+  width: 15px;
+  height: 15px;
+}
+
+.forgot-password-link {
+  color: #3182ce;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.forgot-password-link:hover {
+  text-decoration: underline;
+  color: #2c5282;
+}
+
+.login-button {
+  width: 100%;
+  padding: 14px;
+  background-color: #3182ce; /* Cor principal do botão */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.05em;
+  font-weight: 600; /* Texto do botão mais destacado */
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.1s ease;
+  letter-spacing: 0.5px;
+}
+
+.login-button:hover {
+  background-color: #2c5282; /* Cor mais escura no hover */
+  transform: translateY(-2px); /* Leve elevação */
+}
+
+.login-button:active {
+  background-color: #2a4365;
+  transform: translateY(0);
+}
+
+.login-footer-text {
+  margin-top: 30px;
+  font-size: 0.8em;
+  color: #a0aec0; /* Cor bem suave para o rodapé */
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 500px) {
+  .login-container-card {
+    margin: 15px;
+    padding: 25px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  }
+
+  .erp-logo {
+    font-size: 2.8em;
+  }
+
+  .erp-subtitle {
+    font-size: 0.95em;
+  }
+
+  .login-form h2 {
+    font-size: 1.4em;
+  }
+
+  .form-options {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px; /* Espaço entre os itens quando em coluna */
+  }
+}
